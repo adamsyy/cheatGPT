@@ -29,7 +29,7 @@ function InputField({ setResultData }) {
         setTimeout(() => {
           setResultData(data.paraphrases);
           setIsLoading(false); // Set isLoading to false after receiving the results
-        }, 2000);
+        }, 0);
       })
       .catch(error => {
         console.error('Error:', error);
