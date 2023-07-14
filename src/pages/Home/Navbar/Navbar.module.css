@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 10px 20px;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  .navItems {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .navItem {
+    margin-right: 10px;
+    font-weight: regular;
+    font-family:"poppins";
+    color: #030303;
+    cursor: pointer;
+  }
+  
