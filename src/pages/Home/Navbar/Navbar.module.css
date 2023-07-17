@@ -18,7 +18,7 @@
   display: flex;
 }
 
-.navItem {
+.navItem { padding: 10px;
   font-family: "poppins";
   color: #030303;
   cursor: pointer;
