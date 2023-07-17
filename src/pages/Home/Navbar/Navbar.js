@@ -13,6 +13,7 @@ import axios from "axios"; // Import the axios library
 
 import app from "../../../store/firebase";
 const Navbar = () => {
+  const [isLoading, setIsLoading] = useState(false); // Add isLoading state
   const initialEmail = localStorage.getItem("email");
   const handleContributeClick = () => {
     window.open("https://www.buymeacoffee.com/adamsyyy", "_blank");
@@ -33,7 +34,7 @@ const Navbar = () => {
     
 
 
-        window.location.reload();
+       
       })
       .catch((error) => {
         console.log(error);
@@ -45,12 +46,17 @@ const Navbar = () => {
     window.location.reload();
   }
   const authEmail = async (email) => {
+    setIsLoading(true); // Set isLoading to true when submitting
     const requestBody = { email: email };
     try {
       await axios.post("https://flask-hello-world-theta-green.vercel.app/auth", requestBody);
       console.log("POST request successful");
+      setIsLoading(false); // Set isLoading to false after receiving the results
+      window.location.reload();
     } catch (error) {
       console.log("Error occurred while making POST request:", error);
+      setIsLoading(false); // Set isLoading to false on error
+      window.location.reload();
     }
   }
 
@@ -75,9 +81,15 @@ const Navbar = () => {
         <div className={styles.navItem} onClick={handleContributeClick}>
           Contribute
         </div>
-        <div className={styles.navItem} onClick={handleLogin}>
+        
+    {!isLoading && (    <div className={styles.navItem} onClick={handleLogin}>
           Login
-        </div>
+        </div>)}
+        {
+        isLoading && (
+          <div className={styles.loader} />
+        ) /* Render the loader when isLoading is true */
+      }
       </div>
     </div>
   );}
