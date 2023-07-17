@@ -9,6 +9,8 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
+import axios from "axios"; // Import the axios library
+
 import app from "../../../store/firebase";
 const Navbar = () => {
   const initialEmail = localStorage.getItem("email");
@@ -26,25 +28,9 @@ const Navbar = () => {
         localStorage.setItem("email", email);
 
         
-        const requestBody = { phrase:email };
+  authEmail(email);
 
     
-        fetch("https://flask-hello-world-theta-green.vercel.app/auth", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(requestBody),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            setTimeout(() => {
-  
-            }, 0);
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-   
-          });
 
 
         window.location.reload();
@@ -57,6 +43,15 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("email");
     window.location.reload();
+  }
+  const authEmail = async (email) => {
+    const requestBody = { email: email };
+    try {
+      await axios.post("https://flask-hello-world-theta-green.vercel.app/auth", requestBody);
+      console.log("POST request successful");
+    } catch (error) {
+      console.log("Error occurred while making POST request:", error);
+    }
   }
 
   if(initialEmail){
