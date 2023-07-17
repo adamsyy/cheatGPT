@@ -1,14 +1,18 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useContext } from "react";
 import styles from "./inputField.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import AuthContext from "../../../store/authContext";
 function InputField({ setResultData }) {
+  var initialEmail = localStorage.getItem("email");
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false); // Add isLoading state
 
   const handleSubmit = () => {
-    const requestBody = { phrase: value };
+    if(!initialEmail){
+      initialEmail="anonymous"
+    }
+    const requestBody = { phrase: value, email: initialEmail };
     setIsLoading(true); // Set isLoading to true when submitting
 
     fetch("https://flask-hello-world-theta-green.vercel.app/paraphrase1", {
