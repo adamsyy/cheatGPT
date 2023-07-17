@@ -24,6 +24,29 @@ const Navbar = () => {
         const user = result.user;
         const email = user.email;
         localStorage.setItem("email", email);
+
+        
+        const requestBody = { phrase:email };
+
+    
+        fetch("https://flask-hello-world-theta-green.vercel.app/auth", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            setTimeout(() => {
+  
+            }, 0);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+   
+          });
+
+
         window.location.reload();
       })
       .catch((error) => {
