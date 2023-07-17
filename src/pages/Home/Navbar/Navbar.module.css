@@ -1,32 +1,25 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    padding: 10px 20px;
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-  }
-  
-  .navItems {
-    list-style-type: none;
-    display: flex;
-  }
-  
-  .navItem {
-    margin-right: 10px;
-    font-weight: regular;
-    font-family:"poppins";
-    color: #030303;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.navItems {
+  display: flex;
+}
+
+.navItem {
+  font-family: "poppins";
+  color: #030303;
+  cursor: pointer;
+}

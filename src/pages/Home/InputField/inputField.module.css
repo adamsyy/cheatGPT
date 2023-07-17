@@ -1,24 +1,25 @@
 .inputFieldContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-top: -13%;
-  padding-top: 2%;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
 }
 
-.inputField {
+.inputFieldContainer textarea {
   background-color: #f5f5f5;
   opacity: 0.8;
-  padding: 10px;
+  padding: 0.75rem;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
-  width: 1800px; /* Adjust the width as needed */
-  height: 30px; /* Adjust the default height as desired */
+  resize: vertical;
+  width: 100%;
 }
-
 .inputField::placeholder {
   font-family: "San Francisco";
 }
@@ -28,85 +29,27 @@
 }
 
 .tickicon {
-  margin-left: 10px;
   padding: 10px;
   border-radius: 50%;
   height: 20px;
   width: 20px;
   background-color: pink;
-  font-size: 1px; /* Decrease the size of the icon */
-}
-
-/* Responsive Styles */
-
-@media (max-width: 768px) {
-  /* For screens up to 768px (e.g., mobile devices) */
-  .inputFieldContainer {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  .inputField {
-    width: 100%; /* Occupy full width */
-    margin-top: 10px;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 1200px) {
-  /* For screens between 769px and 1200px (e.g., tablets) */
-  .tickicon {
-    font-size: 0.5px; /* Decrease the size of the icon further */
-    margin-top: 10px;
-  }
-  .inputFieldContainer {
-    margin-top: -25%;
-    display: flex;
-    flex-direction: row;
-  }
-  .inputField {
-
-    padding: 10px;
-    font-size: 16px;
-    width: 250px; /* Adjust the width as needed */
-    height: 25px; /* Adjust the default height as desired */
-  }
-}
-
-@media (min-width: 1201px) {
-  /* For screens larger than 1200px (e.g., big screens and 4k) */
-  .inputFieldContainer {
-    margin-top: -13%;
-  }
+  font-size: 1px;
+  cursor: pointer;
 }
 
 @media (max-width: 476px) {
-  /* For screens up to 400px (e.g., small mobile screens) */
   .tickicon {
-    font-size: 0.5px; /* Decrease the size of the icon further */
-    margin-top: 10px;
+    font-size: 0.5px;
   }
   .inputFieldContainer {
-    margin-top: -50%;
-    display: flex;
-    flex-direction: row;
-  }
-  .inputField {
-
-    padding: 10px;
-    font-size: 16px;
-    width: 250px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the default height as desired */
+    padding: 0;
   }
 }
 
-
 .loader {
-  position: relative;
   width: 40px;
   height: 40px;
-  margin: 50px auto;
   border-radius: 50%;
   border: 4px solid pink;
   border-top-color: transparent;

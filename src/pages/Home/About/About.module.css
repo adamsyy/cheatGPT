@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 225px;
   }
   
   .home-heading-description-div {
@@ -11,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 225px;
   }
   
   .home-heading {
@@ -24,7 +22,6 @@
     font-size: 22px;
     font-family: "San Francisco";
     color: grey;
-    width: 80%;
   }
   
   /* Responsive Styles */
@@ -36,7 +33,7 @@
     }
   
     .home-description {
-      width: 80%;
+      /* width: 80%; */
       font-size: 15px;
     }
   }
@@ -48,7 +45,7 @@
     }
   
     .home-description {
-      width: 70%;
+      /* width: 70%; */
       font-size: 20px;
     }
   }
