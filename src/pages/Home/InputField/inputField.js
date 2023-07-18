@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import styles from "./inputField.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import AuthContext from "../../../store/authContext";
 
 function InputField({ setResultData }) {
+  var initialEmail = localStorage.getItem("email");
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
+    if(!initialEmail){
+      initialEmail="anonymous"
+    }
     e.preventDefault();
 
-    const requestBody = { phrase: value };
+    const requestBody = { phrase: value, email: initialEmail };
     setIsLoading(true);
 
     fetch("https://flask-hello-world-theta-green.vercel.app/paraphrase1", {
@@ -47,7 +52,7 @@ function InputField({ setResultData }) {
       <div className={styles.inputFieldContainer}>
         <form onSubmit={handleSubmit}>
           <textarea
-            placeholder="Enter your text here"
+              placeholder="Enter your AI generated text"
             value={value}
             rows={value.split("\n").length < 3 ? 3 : value.split("\n").length + 2}
             onChange={handleChange}
