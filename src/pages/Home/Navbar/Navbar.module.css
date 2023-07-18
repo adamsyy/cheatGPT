@@ -18,8 +18,25 @@
   display: flex;
 }
 
-.navItem {
+.navItem { padding: 10px;
   font-family: "poppins";
   color: #030303;
   cursor: pointer;
+}
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid pink;
+  border-top-color: transparent;
+  animation: spin 1s infinite ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

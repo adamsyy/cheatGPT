@@ -49,9 +49,7 @@ function InputField({ setResultData }) {
           <textarea
             placeholder="Enter your text here"
             value={value}
-            rows={
-              value.split("\n").length < 3 ? 3 : value.split("\n").length + 2
-            }
+            rows={value.split("\n").length < 3 ? 3 : value.split("\n").length + 2}
             onChange={handleChange}
             style={{ fontFamily: "San Francisco" }}
             onKeyDown={handleKeyDown}
