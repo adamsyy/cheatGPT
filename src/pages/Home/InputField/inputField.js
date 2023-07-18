@@ -38,7 +38,7 @@ function InputField({ setResultData }) {
     <>
       <div className={styles.inputFieldContainer}>
         <textarea
-          placeholder="Enter your text here"
+          placeholder="Enter your AI generated text"
           value={value}
           rows={value.split("\n").length < 3 ? 3 : value.split("\n").length + 2}
           onChange={(e) => setValue(e.target.value)}
