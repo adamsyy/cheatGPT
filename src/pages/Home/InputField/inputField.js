@@ -10,8 +10,8 @@ function InputField({ setResultData }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
-    if(!initialEmail){
-      initialEmail="anonymous"
+    if (!initialEmail) {
+      initialEmail = "anonymous";
     }
     e.preventDefault();
 
@@ -49,24 +49,28 @@ function InputField({ setResultData }) {
 
   return (
     <>
-      <div className={styles.inputFieldContainer}>
+      <div className={styles.inputFieldContainerWrapper}>
         <form onSubmit={handleSubmit}>
-          <textarea
+          <div className={styles.inputFieldContainer}>
+            <textarea
               placeholder="Enter your AI generated text"
-            value={value}
-            rows={value.split("\n").length < 3 ? 3 : value.split("\n").length + 2}
-            onChange={handleChange}
-            style={{ fontFamily: "San Francisco" }}
-            onKeyDown={handleKeyDown}
-          />
-          <FontAwesomeIcon
-            icon={faCheck}
-            type="submit"
-            color="black"
-            className={styles.tickicon}
-            size="10x"
-            onClick={handleSubmit}
-          />
+              value={value}
+              rows={
+                value.split("\n").length < 3 ? 3 : value.split("\n").length + 2
+              }
+              onChange={handleChange}
+              style={{ fontFamily: "San Francisco" }}
+              onKeyDown={handleKeyDown}
+            />
+            <FontAwesomeIcon
+              icon={faCheck}
+              type="submit"
+              color="black"
+              className={styles.tickicon}
+              size="10x"
+              onClick={handleSubmit}
+            />
+          </div>
         </form>
       </div>{" "}
       {isLoading && <div className={styles.loader} />}

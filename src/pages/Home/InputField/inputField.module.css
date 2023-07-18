@@ -7,6 +7,13 @@
   width: 100%;
   padding: 1rem;
 }
+.inputFieldContainerWrapper
+{
+  width: 100%;
+}
+.inputFieldContainerWrapper form {
+  width: 100%;
+}
 
 .inputFieldContainer textarea {
   background-color: #f5f5f5;

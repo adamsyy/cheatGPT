@@ -36,5 +36,27 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  
+}
+
+@media (max-width: 476px) {
+  .home-main {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-main {
+    justify-content: flex-start;
+  }
+  .home-heading {
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: "poppins";
+  }
+
+  .home-description {
+    font-size: 15px;
+    font-family: "San Francisco";
+    color: grey;
+  }
 }
