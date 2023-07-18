@@ -1,15 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styles from "./inputField.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function InputField({ setResultData }) {
   const [value, setValue] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Add isLoading state
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const requestBody = { phrase: value };
-    setIsLoading(true); // Set isLoading to true when submitting
+    setIsLoading(true);
 
     fetch("https://flask-hello-world-theta-green.vercel.app/paraphrase1", {
       method: "POST",
@@ -21,38 +23,50 @@ function InputField({ setResultData }) {
         console.log(data);
         setTimeout(() => {
           setResultData(data.paraphrases);
-          setIsLoading(false); // Set isLoading to false after receiving the results
+          setIsLoading(false);
         }, 0);
       })
       .catch((error) => {
         console.error("Error:", error);
-        setIsLoading(false); // Set isLoading to false on error
+        setIsLoading(false);
       });
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSubmit(e);
+    }
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
     <>
       <div className={styles.inputFieldContainer}>
-        <textarea
-          placeholder="Enter your text here"
-          value={value}
-          rows={value.split("\n").length < 3 ? 3 : value.split("\n").length + 2}
-          onChange={(e) => setValue(e.target.value)}
-          style={{ fontFamily: "San Francisco" }}
-        />
-        <FontAwesomeIcon
-          icon={faCheck}
-          color="black"
-          className={styles.tickicon}
-          size="10x"
-          onClick={handleSubmit}
-        />
+        <form onSubmit={handleSubmit}>
+          <textarea
+            placeholder="Enter your text here"
+            value={value}
+            rows={
+              value.split("\n").length < 3 ? 3 : value.split("\n").length + 2
+            }
+            onChange={handleChange}
+            style={{ fontFamily: "San Francisco" }}
+            onKeyDown={handleKeyDown}
+          />
+          <FontAwesomeIcon
+            icon={faCheck}
+            type="submit"
+            color="black"
+            className={styles.tickicon}
+            size="10x"
+            onClick={handleSubmit}
+          />
+        </form>
       </div>{" "}
-      {
-        isLoading && (
-          <div className={styles.loader} />
-        ) /* Render the loader when isLoading is true */
-      }
+      {isLoading && <div className={styles.loader} />}
     </>
   );
 }
