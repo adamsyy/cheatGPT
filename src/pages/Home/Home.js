@@ -6,6 +6,7 @@ import InputField from "./InputField/inputField";
 import Result from "./Result/result";
 import Navbar from "./Navbar/Navbar";
 import About from "./About/About";
+import Proof from "./Proof/Proof";
 
 const Home = () => {
   const [resultData, setResultData] = useState(null);
@@ -27,6 +28,7 @@ const Home = () => {
         </div>
         <InputField setResultData={setResultData} />
         {resultData && <Result data={resultData} />}
+        <Proof/>
       </div>
     </div>
   );

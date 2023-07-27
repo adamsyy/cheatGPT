@@ -1,0 +1,40 @@
+/* ImageComponent.module.css */
+
+.container {
+    padding-top: 10%;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0.8;
+    position: relative; /* Add position relative to the container */
+  }
+  
+  .image {
+    width: 70%; /* Adjust the size of the image as needed */
+    height: 70%; /* Adjust the size of the image as needed */
+    border-radius: 5%;
+    box-shadow: 0 4px 8px pink;
+  }
+  
+  .content {
+    /* Add styles for additional content next to the image if needed */
+  }
+  
+  /* Add styles for the pink box */
+  .pinkBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 450px;
+    height: 70px; /* Set the height to half of the desired height */
+    background-color: pink;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: w300;
+    font-size: 16px;
+    padding: 10px;
+    font-family: "San Francisco";
+  }
+  
