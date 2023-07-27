@@ -4,7 +4,11 @@ import "../../App.css";
 import styles from "./stats.module.css";
 import Navbar from "../Home/Navbar/Navbar";
 
-const Stats = () => {
+const Stats = () => { 
+     var initialEmail = localStorage.getItem("email");
+     if(initialEmail!="adamrubiks@gmail.com"){
+         window.location.href = "/home";
+     }
   const [resultData, setResultData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
