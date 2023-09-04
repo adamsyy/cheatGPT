@@ -9,17 +9,21 @@ const Result = ({ data }) => {
 
   const initialEmail = localStorage.getItem("email");
 const [isClicked,setisClicked]= useState(false);
-const [noofclicks,setNoOfclicks]= useState(0);
+const [isDeadLock,setDeadLock]=useState(false);
   const sendToBackend = async () => {
- setNoOfclicks(noofclicks+1);
 
-setisClicked(!isClicked);
+ if(isClicked){
+  deleteDoc();
+  return;
+ }
+
+setisClicked(true);
     const requestBody = { user_id:initialEmail,content:data };
     try {
-      if(noofclicks>0){return;}
+
       await axios.post("https://flask-hello-world-theta-green.vercel.app/add_favorites", requestBody);
       console.log("POST request successful");
-      setisClicked(true);
+     
       //setIsLoading(false); // Set isLoading to false after receiving the results
      // window.location.reload();
 
@@ -30,7 +34,27 @@ setisClicked(!isClicked);
     }
   }
 
-
+  const deleteDoc = async () => {
+    setisClicked(false);
+    const requestData = {
+      content:data // Replace with the content value you want to match
+    };
+  
+    try {
+      await axios.delete("https://flask-hello-world-theta-green.vercel.app/delete_favorites", {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: requestData
+      });
+      console.log("DELETE request successful");
+  
+      // Handle the response or do any necessary post-request actions here
+    } catch (error) {
+      console.log("Error occurred while making DELETE request:", error);
+    }
+  }
+  
   return (
     <div className={styles["result-out"]} >
     {initialEmail &&
