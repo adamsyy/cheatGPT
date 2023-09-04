@@ -6,7 +6,7 @@ import Navbar from "../Home/Navbar/Navbar";
 
 const Stats = () => {
   var initialEmail = localStorage.getItem("email");
-  if (initialEmail !== "adamrubiks@gmail.com") {
+  if (initialEmail !== "adamrubiks@gmail.com"&&initialEmail !== "amaljojo110@gmail.com") {
     window.location.href = "/home";
   }
   const [resultData, setResultData] = useState(null);
