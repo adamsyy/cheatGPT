@@ -11,7 +11,9 @@ const Result = ({ data }) => {
 const [isClicked,setisClicked]= useState(false);
 const [isDeadLock,setDeadLock]=useState(false);
   const sendToBackend = async () => {
-
+if(isDeadLock){
+  return;
+}
  if(isClicked){
   deleteDoc();
   return;
@@ -20,27 +22,31 @@ const [isDeadLock,setDeadLock]=useState(false);
 setisClicked(true);
     const requestBody = { user_id:initialEmail,content:data };
     try {
-
+setDeadLock(true);
       await axios.post("https://flask-hello-world-theta-green.vercel.app/add_favorites", requestBody);
       console.log("POST request successful");
-     
+      setDeadLock(false);
       //setIsLoading(false); // Set isLoading to false after receiving the results
      // window.location.reload();
 
     } catch (error) {
-
+      setDeadLock(false);
       console.log("Error occurred while making POST request:", error);
 
     }
   }
 
   const deleteDoc = async () => {
+    if(isDeadLock){
+      return;
+    }
     setisClicked(false);
     const requestData = {
       content:data // Replace with the content value you want to match
     };
   
     try {
+      setDeadLock(true);
       await axios.delete("https://flask-hello-world-theta-green.vercel.app/delete_favorites", {
         headers: {
           "Content-Type": "application/json"
@@ -48,9 +54,10 @@ setisClicked(true);
         data: requestData
       });
       console.log("DELETE request successful");
-  
+      setDeadLock(false);
       // Handle the response or do any necessary post-request actions here
     } catch (error) {
+      setDeadLock(false);
       console.log("Error occurred while making DELETE request:", error);
     }
   }
