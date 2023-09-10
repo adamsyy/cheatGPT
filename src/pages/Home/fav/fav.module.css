@@ -1,0 +1,118 @@
+.home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 3rem;
+    padding: 3rem;
+  }
+  
+  .home-heading-description-div {
+    text-align: center;
+  }
+  
+  .home-heading {
+    font-weight: bold;
+    font-size: 7rem;
+    font-family: "poppins";
+  }
+  
+  .home-description {
+    font-size: 22px;
+    font-family: "San Francisco";
+    color: grey;
+  }
+  
+  @media (max-width: 768px) {
+    .home-heading {
+      font-size: 4rem;
+    }
+  
+    .home-description {
+      font-size: 15px;
+    }
+    .home-main {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 476px) {
+    .home-main {
+      justify-content: flex-start;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .home-main {
+      justify-content: flex-start;
+    }
+    .home-heading {
+      font-weight: bold;
+      font-size: 3rem;
+      font-family: "poppins";
+    }
+  
+    .home-description {
+      font-size: 15px;
+      font-family: "San Francisco";
+      color: grey;
+    }
+  }
+
+  .loaderdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  
+  .loader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid pink;
+    border-top-color: transparent;
+    animation: spin 1s infinite ease-in-out;
+   
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .home-ppl-10 {
+    padding-top: 30px;
+    font-size: 25px;
+    font-family: "San Francisco";
+    color: grey;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+  }
+  .home-ppl-10-item {
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: "San Francisco";
+    color: grey;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+  
+    /* Box Effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+  }
+  .home-ppl-10-item-container {
+    margin-bottom: 10px; /* Add spacing between each item */
+  
+  }

@@ -5,12 +5,14 @@ import './styles/fonts.css';
 import './App.css';
 import Home from './pages/Home/Home';
 import Stats from "./pages/Stats/stats";
+import Fav from "./pages/Home/fav/fav";
 const App = () => {
 
   return (
     <Routes>
         <Route path="/" element={<Navigate to="home" />} />
         <Route path="stats" element={<Stats/>} />
+        <Route path="favourites" element={<Fav/>} />
         <Route path="home" element={<Home/>} />
         </Routes>
   );
