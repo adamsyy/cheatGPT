@@ -3,11 +3,14 @@ import "../../../styles/fonts.css";
 import "../../../App.css";
 import styles from "./fav.module.css";
 import Navbar from "../../Home/Navbar/Navbar";
+import heart_filled from "../../../styles/heart_filled.png";
+import heart_unfilled from "../../../styles/heart_unfilled.png";
 
 const Fav = () => {
 
   const [resultData, setResultData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [likedItems, setLikedItems] = useState([]);
 
   const fetchData = () => {
     const initialEmail = localStorage.getItem("email");
@@ -38,6 +41,18 @@ const Fav = () => {
   };
   
 
+
+  const handleDelete = (index) => {
+    // Create a copy of resultData
+    const updatedData = { ...resultData };
+
+    // Remove the item at the given index from the favorites array
+    updatedData.favorites.splice(index, 1);
+
+    // Update the resultData state
+    setResultData(updatedData);
+  };
+
   useEffect(() => {
     // Fetch data immediately when the component mounts
     setIsLoading(true);
@@ -46,7 +61,7 @@ const Fav = () => {
     // Call the API every 5 seconds using setInterval
     const interval = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 50000000000);
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
@@ -75,6 +90,12 @@ const Fav = () => {
                 {resultData["favorites"].map((item, index) => (
                   <div key={index} className={styles["home-ppl-10-item-container"]}>
                     <div className={styles["home-ppl-10-item"]}>{item.content}</div>
+                    <img
+                      src={likedItems.includes(index) ? heart_unfilled : heart_filled}
+                      alt="Like"
+                      className={styles["like-icon"]}
+                      onClick={() => handleDelete(index)}
+                    />
                   </div>
                 ))}
               </div>
