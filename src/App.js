@@ -6,6 +6,7 @@ import "./styles/fonts.css";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Stats from "./pages/Stats/stats";
+import Payment from "./pages/Payment/Payment";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ Bypassing AI filters,Content moderation bypass,Natural language processing,Unres
         <Route path="/" element={<Navigate to="home" />} />
         <Route path="stats" element={<Stats />} />
         <Route path="home" element={<Home />} />
+        <Route path="payment" element={<Payment />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,42 @@
+/* Payment.module.css */
+.payment-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .premium-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:pink; /* Change this to your desired button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .button-link:hover {
+    background-color:#F3CFC6; /* Change this to your desired hover color */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .payment-message {
+      font-size: 16px;
+    }
+  
+    .premium-button {
+      margin-top: 15px;
+    }
+  
+    .button-link {
+      padding: 8px 16px;
+    }
+  }
+  

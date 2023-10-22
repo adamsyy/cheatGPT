@@ -1,0 +1,23 @@
+.premiumBadge {
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    padding-top: 17px;
+    font-size: 20px;
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow */
+    transform: translate(0, -2px); /* Raise the button slightly on hover */
+  
+    &:hover {
+      background-color: pink;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Adjust the shadow on hover */
+      transform: translate(0, -4px); /* Further raise the button on hover */
+    }
+  }
+  

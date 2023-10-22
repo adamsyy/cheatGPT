@@ -40,3 +40,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.premiumBadge {
+  margin-top: 5px;
+  height: 20px;
+  display: inline-block;
+  padding: 5px;
+  background-color: PINK; /* Pink Background color */
+  color: #fff; /* Text color */
+  border-radius: 10%; /* Circular border */
+  margin-left: 10px; /* Add space to the left of the badge */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add a smooth background color transition on hover */
+
+  &:hover {
+    background-color: #F3CFC6; /* Darker pink on hover */
+  }
+}

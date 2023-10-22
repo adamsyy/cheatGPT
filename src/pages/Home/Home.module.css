@@ -67,3 +67,37 @@ h1, h2, h3, h4, h5, h6 {
     color: grey;
   }
 }
+
+.premiumBadge {
+  text-align: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 10px 20px; /* Adjust padding for a more button-like appearance */
+  font-size: 20px;
+  display: inline-block;
+  background-color: black; /* Blue background color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+margin-left: 10px;
+  &:hover {
+    background-color: pink; /* Darker blue on hover */
+  }
+}
+
+.home-full-result {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 450px) {
+  .home-full-result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .premiumBadge {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
