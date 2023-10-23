@@ -10,7 +10,7 @@ function InputField({ setResultData, setisBig }) {
   const [isLoading, setIsLoading] = useState(false);
   const [count, setCount] = useState(Number(localStorage.getItem("count")) || 0); // Initialize count state from localStorage
   const premium = localStorage.getItem("premium");
-  const maxTries = 3; // Define the maximum allowed tries
+  const maxTries = 10; // Define the maximum allowed tries
 
   useEffect(() => {
     // Update the count in local storage whenever it changes
