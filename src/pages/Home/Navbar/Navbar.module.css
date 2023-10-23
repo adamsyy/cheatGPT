@@ -81,3 +81,16 @@ padding-top: 10px;
     background-color: #F3CFC6; /* Darker pink on hover */
   }
 }
+.navItemopt {
+padding: 10px;
+font-family: "poppins";
+color: #030303;
+cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .navItemopt {
+    /* Your styles for .navItemopt on larger screens */
+    display: none;
+
+  }
+}

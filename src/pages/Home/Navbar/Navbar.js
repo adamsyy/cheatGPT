@@ -25,6 +25,9 @@ const Navbar = () => {
   const handleBuyPremiumClick=()=>{
 handlePremiumClick();
   }
+  const handleFeedback=()=>{
+    window.open("https://forms.gle/vQkYpcuFEoWQWdaf8", "_blank");
+  }
 
   
   const handlePremiumClick = async () => {
@@ -119,6 +122,9 @@ if(response.data.premium==true){
      
           </div>
         )}
+        <div className={styles.navItemopt} onClick={handleFeedback} >
+            Feedback
+          </div>
           <div className={styles.navItem} onClick={handleContributeClick}>
             Contribute
           </div>
