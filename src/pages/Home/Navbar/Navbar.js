@@ -51,7 +51,7 @@ handlePremiumClick();
         console.log(data);
         setIsLoading(false); // Set loading to false when the request is complete
         // Open a new window
-        window.open('https://buy.stripe.com/7sI9Brdnm2Mw8GQ5kn', '_blank');
+        window.open('https://buy.stripe.com/28ocNDfvudra7CM3cg', '_blank');
         // Reload the current page
         window.location.reload();
       })
