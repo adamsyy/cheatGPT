@@ -1,29 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./inputField.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faL } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import AuthContext from "../../../store/authContext";
 
 function InputField({ setResultData, setisBig }) {
   var initialEmail = localStorage.getItem("email");
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [count, setCount] = useState(Number(localStorage.getItem("count")) || 0); // Initialize count state from localStorage
   const premium = localStorage.getItem("premium");
+  const maxTries = 3; // Define the maximum allowed tries
+
+  useEffect(() => {
+    // Update the count in local storage whenever it changes
+    localStorage.setItem("count", count.toString());
+  }, [count]);
+
   const handleSubmit = (e) => {
     if (!initialEmail) {
       initialEmail = "anonymous";
     }
     e.preventDefault();
 
-    if (value.trim().length > 1125 && initialEmail == "anonymous") {
+    if (count >= maxTries) {
+      setResultData(
+        "You have exceeded the maximum allowed tries. Please consider subscribing to our premium plan which is priced at just $2 for unlimited access."
+      );
+      setisBig(true);
+      return; // Do not proceed if the maximum tries are exceeded
+    }
+
+    if (value.trim().length > 1125 && initialEmail === "anonymous") {
       setResultData(
         "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
       );
       setisBig(true);
       return; // Do not proceed if input is too short
     }
-    if (value.trim().length > 1125 && !premium && initialEmail != "anonymous") {
+    if (value.trim().length > 1125 && !premium && initialEmail !== "anonymous") {
       setResultData(
         "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
       );
@@ -33,6 +48,9 @@ function InputField({ setResultData, setisBig }) {
     setisBig(false);
     const requestBody = { phrase: value, email: initialEmail };
     setIsLoading(true);
+
+    // Update the count every time the user inputs something
+    setCount(count + 1);
 
     fetch("https://flask-hello-world-theta-green.vercel.app/paraphrase1", {
       method: "POST",
@@ -88,7 +106,12 @@ function InputField({ setResultData, setisBig }) {
             />
           </div>
         </form>
-      </div>{" "}
+     {!premium&&(
+         <div className={styles.remainingTries}>
+         Tries remaining: {maxTries - count}
+       </div>
+     )}
+      </div>
       {isLoading && <div className={styles.loader} />}
     </>
   );

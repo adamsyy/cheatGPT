@@ -87,6 +87,7 @@ handlePremiumClick();
   const handleLogout = () => {
     localStorage.removeItem("email");
     localStorage.removeItem('premium');
+    localStorage.removeItem('count');
     window.location.reload();
   }
   

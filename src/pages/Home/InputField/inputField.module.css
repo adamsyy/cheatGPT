@@ -71,3 +71,10 @@
     transform: rotate(360deg);
   }
 }
+
+.remainingTries {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+  padding-left: 1%;
+}
