@@ -115,7 +115,7 @@ if(response.data.premium==true){
         <div className={styles.navItems}>
         {!premium && (
           <div className={styles.nonpremiumBadge} onClick={handleBuyPremiumClick}>
-            {isLoading?<h1>Please Wait</h1>:  <h1>Premium</h1>}
+            {isLoading?<h1>Please Wait</h1>:  <h1>Buy Premium</h1>}
      
           </div>
         )}

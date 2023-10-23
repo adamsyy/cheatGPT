@@ -57,6 +57,14 @@
     background-color: #F3CFC6; /* Darker pink on hover */
   }
 }
+
+   /* Responsive styles */
+   @media (max-width: 450px) {
+    .nonpremiumBadge{
+font-size: 10px;
+padding-top: 10px;
+    }
+      }
 .premiumBadge {
   margin-top: 5px;
   height: 20px;
