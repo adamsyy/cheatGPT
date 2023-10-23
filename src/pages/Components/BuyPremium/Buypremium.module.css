@@ -20,4 +20,13 @@
       transform: translate(0, -4px); /* Further raise the button on hover */
     }
   }
-  
+
+
+
+    /* Responsive styles */
+    @media (max-width: 450px) {
+  .premiumBadge{
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+    }

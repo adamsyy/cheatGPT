@@ -22,10 +22,47 @@ const Navbar = () => {
   const handleContributeClick = () => {
     window.open("https://www.buymeacoffee.com/adamsyyy", "_blank");
   };
+  const handleBuyPremiumClick=()=>{
+handlePremiumClick();
+  }
+
   
-  const handlePremiumClick = () => {
-    window.open("https://buy.stripe.com/dR6dRH6YY3QAg9iaEE", "_blank");
+  const handlePremiumClick = async () => {
+  
+    setIsLoading(true);
+
+    // Perform the API call here
+   const initialEmail = localStorage.getItem('email');
+    fetch('https://flask-hello-world-theta-green.vercel.app/paymentadd', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: initialEmail,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the API response data here
+        console.log(data);
+        setIsLoading(false); // Set loading to false when the request is complete
+        // Open a new window
+        window.open('https://buy.stripe.com/cN228Zabafzig9ibIK', '_blank');
+        // Reload the current page
+        window.location.reload();
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error(error);
+        setIsLoading(false); // Set loading to false when there's an error
+        // You might still want to reload the page here in case of an error.
+       
+      });
   };
+
+  
+
 
   const handleLogin = () => {
     const auth = getAuth(app);
@@ -76,6 +113,12 @@ if(response.data.premium==true){
           <img src={logo} alt="Logo" className={styles.logo} />
         </Link>
         <div className={styles.navItems}>
+        {!premium && (
+          <div className={styles.nonpremiumBadge} onClick={handleBuyPremiumClick}>
+            {isLoading?<h1>Please Wait</h1>:  <h1>Premium</h1>}
+     
+          </div>
+        )}
           <div className={styles.navItem} onClick={handleContributeClick}>
             Contribute
           </div>

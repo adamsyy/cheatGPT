@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faL } from "@fortawesome/free-solid-svg-icons";
 import AuthContext from "../../../store/authContext";
 
-function InputField({ setResultData ,setisBig}) {
+function InputField({ setResultData, setisBig }) {
   var initialEmail = localStorage.getItem("email");
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const premium = localStorage.getItem("premium");
   const handleSubmit = (e) => {
     if (!initialEmail) {
@@ -16,13 +16,21 @@ function InputField({ setResultData ,setisBig}) {
     }
     e.preventDefault();
 
-    if (value.trim().length >1125&& !premium && initialEmail!="anonymous") {
-    
-      setResultData("Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences.");
-setisBig(true);
+    if (value.trim().length > 1125 && initialEmail == "anonymous") {
+      setResultData(
+        "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
+      );
+      setisBig(true);
       return; // Do not proceed if input is too short
     }
-setisBig(false);
+    if (value.trim().length > 1125 && !premium && initialEmail != "anonymous") {
+      setResultData(
+        "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
+      );
+      setisBig(true);
+      return; // Do not proceed if input is too short
+    }
+    setisBig(false);
     const requestBody = { phrase: value, email: initialEmail };
     setIsLoading(true);
 
@@ -64,9 +72,7 @@ setisBig(false);
               placeholder="Enter your AI-generated text"
               value={value}
               rows={
-                value.split("\n").length < 3
-                  ? 3
-                  : value.split("\n").length + 2
+                value.split("\n").length < 3 ? 3 : value.split("\n").length + 2
               }
               onChange={handleChange}
               style={{ fontFamily: "San Francisco" }}
