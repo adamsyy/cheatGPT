@@ -46,14 +46,22 @@ handlePremiumClick();
       }),
     })
       .then((response) => response.json())
-      .then((data) => {
-        // Handle the API response data here
-        console.log(data);
-        setIsLoading(false); // Set loading to false when the request is complete
-        // Open a new window
-        window.open('https://buy.stripe.com/28ocNDfvudra7CM3cg', '_blank');
-        // Reload the current page
-        window.location.reload();
+      .then(() => {
+        // Create an anchor element
+        const mailtoLink = document.createElement('a');
+        
+        // Set the "href" attribute with the mailto link
+        const recipient = 'adamoommen.mec@gmail.com';
+        const subject = 'CheatGPT Premium Application Needed';
+        const body = 'Hi, I wanted a premium account';
+        
+        mailtoLink.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Simulate a click on the link to open the email client
+        mailtoLink.click();
+        
+        // Handle any further actions or UI changes as needed
+        setIsLoading(false);
       })
       .catch((error) => {
         // Handle errors

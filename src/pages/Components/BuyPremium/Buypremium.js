@@ -69,13 +69,13 @@ const PremiumBadge = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          // Handle the API response data here
-          console.log(data);
-          setIsLoading(false); // Set loading to false when the request is complete
-          // Open a new window
-          window.open('https://buy.stripe.com/28ocNDfvudra7CM3cg', '_blank');
-          // Reload the current page
-          window.location.reload();
+          // // Handle the API response data here
+          // console.log(data);
+          // setIsLoading(false); // Set loading to false when the request is complete
+          // // Open a new window
+          // window.open('https://buy.stripe.com/28ocNDfvudra7CM3cg', '_blank');
+          // // Reload the current page
+          // window.location.reload();
         })
         .catch((error) => {
           // Handle errors
