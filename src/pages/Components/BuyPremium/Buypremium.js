@@ -80,6 +80,15 @@ const PremiumBadge = () => {
         .then((data) => {
           // Handle other actions when the user is already signed in
           setIsLoading(false);
+          const mailtoLink = document.createElement('a');
+          const recipient = 'adamoommen.mec@gmail.com';
+          const subject = 'CheatGPT Premium Application Needed';
+          const body = 'Hi, I wanted a premium account';
+          
+          mailtoLink.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          
+          // Simulate a click on the link to open the email client
+          mailtoLink.click();
         })
         .catch((error) => {
           // Handle errors
