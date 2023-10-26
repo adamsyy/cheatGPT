@@ -50,14 +50,23 @@ const PremiumBadge = () => {
   const [loading, setIsLoading] = useState(false);
 
   const handlePremiumClick = async () => {
+    const initialEmail = localStorage.getItem('email');
+  
     if (!initialEmail) {
-      // If the email is not available, initiate the login process and wait for it to complete.
-      await handleLogin();
-    }else{
+      // If the user is not signed in, open Gmail with the pre-filled email
+      const mailtoLink = document.createElement('a');
+      const recipient = 'adamoommen.mec@gmail.com';
+      const subject = 'CheatGPT Premium Application Needed';
+      const body = 'Hi, I wanted a premium account';
+      
+      mailtoLink.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Simulate a click on the link to open the email client
+      mailtoLink.click();
+    } else {
       setIsLoading(true);
-
-      // Perform the API call here
-      initialEmail = localStorage.getItem('email');
+  
+      // User is already signed in; perform other actions
       fetch('https://flask-hello-world-theta-green.vercel.app/paymentadd', {
         method: 'POST',
         headers: {
@@ -69,13 +78,8 @@ const PremiumBadge = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          // // Handle the API response data here
-          // console.log(data);
-          // setIsLoading(false); // Set loading to false when the request is complete
-          // // Open a new window
-          // window.open('https://buy.stripe.com/28ocNDfvudra7CM3cg', '_blank');
-          // // Reload the current page
-          // window.location.reload();
+          // Handle other actions when the user is already signed in
+          setIsLoading(false);
         })
         .catch((error) => {
           // Handle errors
@@ -85,9 +89,8 @@ const PremiumBadge = () => {
           window.location.reload();
         });
     }
-
- 
   };
+  
 
   return (
     <div className={styles.premiumBadge} onClick={handlePremiumClick}>
