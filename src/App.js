@@ -7,6 +7,7 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Stats from "./pages/Stats/stats";
 import Payment from "./pages/Payment/Payment";
+import GivePremium from "./pages/GivePremium/givepremium";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ Bypassing AI filters,Content moderation bypass,Natural language processing,Unres
         <Route path="stats" element={<Stats />} />
         <Route path="home" element={<Home />} />
         <Route path="payment" element={<Payment />} />
+        <Route path="givepremium" element={<GivePremium/>} />
       </Routes>
     </div>
   );
