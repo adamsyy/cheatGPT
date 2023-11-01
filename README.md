@@ -13,7 +13,7 @@ The ultimate AI detection bypass tool. We remove AI detection from content gener
 - **Secure Payment:** Your payment for the premium features is secured with Stripe, ensuring a safe and reliable transaction.
 
 ## Getting Started
-To get started with CheatGPT, simply sign up for a free account on our platform. You'll have 15 free tries to experience the power of our text generation tool. If you find it useful and want access to unlimited word count and prompts, you can upgrade to the premium account for just $2.
+To get started with CheatGPT, simply sign up for a free account on our platform. You'll have 15 free tries to experience the power of our text generation tool. If you find it useful and want access to unlimited word count and prompts, you can upgrade to the premium account for just $5.
 
 ## Usage
 1. Sign up for a free or premium account.

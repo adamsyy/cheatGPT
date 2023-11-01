@@ -25,7 +25,7 @@ function InputField({ setResultData, setisBig }) {
 
     if (count >= maxTries) {
       setResultData(
-        "You have exceeded the maximum allowed tries. Please consider subscribing to our premium plan which is priced at just $2 for unlimited access."
+        "You have exceeded the maximum allowed tries. Please consider subscribing to our premium plan which is priced at just $5 for unlimited access."
       );
       setisBig(true);
       return; // Do not proceed if the maximum tries are exceeded
@@ -33,14 +33,14 @@ function InputField({ setResultData, setisBig }) {
 
     if (value.trim().length > 1125 && initialEmail === "anonymous") {
       setResultData(
-        "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
+        "Please consider subscribing to our premium plan, which is priced at just $5, in order to input longer sentences."
       );
       setisBig(true);
       return; // Do not proceed if input is too short
     }
     if (value.trim().length > 1125 && !premium && initialEmail !== "anonymous") {
       setResultData(
-        "Please consider subscribing to our premium plan, which is priced at just $2, in order to input longer sentences."
+        "Please consider subscribing to our premium plan, which is priced at just $5, in order to input longer sentences."
       );
       setisBig(true);
       return; // Do not proceed if input is too short
