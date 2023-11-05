@@ -1,0 +1,25 @@
+.proofmain {
+    display: flex;
+    flex-direction: column;
+    padding-left:20%;
+  }
+  
+  .proof_heading {
+    font-family: "poppins";
+    font-size: 60px;
+    font-weight: 700;
+    color:pink
+  }
+  
+  .proof_heading > span:first-child {
+    color: black;
+  }
+  .image_container_div{
+    padding-left: 30%;
+  }
+  .image_container {
+    width: 900px; /* Adjust the width as needed */
+
+    border-radius: 25px; /* Add rounded corners */
+   
+  }

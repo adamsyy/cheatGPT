@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Add a z-index to make sure it appears above other content */
 }
 
 .logo {
@@ -18,11 +21,13 @@
   display: flex;
 }
 
-.navItem { padding: 10px;
+.navItem {
+  padding: 10px;
   font-family: "poppins";
   color: #030303;
   cursor: pointer;
 }
+
 .loader {
   width: 40px;
   height: 40px;
@@ -58,13 +63,14 @@
   }
 }
 
-   /* Responsive styles */
-   @media (max-width: 450px) {
-    .nonpremiumBadge{
-font-size: 10px;
-padding-top: 10px;
-    }
-      }
+/* Responsive styles */
+@media (max-width: 450px) {
+  .nonpremiumBadge {
+    font-size: 10px;
+    padding-top: 10px;
+  }
+}
+
 .premiumBadge {
   margin-top: 5px;
   height: 20px;
@@ -81,16 +87,17 @@ padding-top: 10px;
     background-color: #F3CFC6; /* Darker pink on hover */
   }
 }
+
 .navItemopt {
-padding: 10px;
-font-family: "poppins";
-color: #030303;
-cursor: pointer;
+  padding: 10px;
+  font-family: "poppins";
+  color: #030303;
+  cursor: pointer;
 }
+
+/* Responsive styles for navItemopt on smaller screens */
 @media screen and (max-width: 768px) {
   .navItemopt {
-    /* Your styles for .navItemopt on larger screens */
     display: none;
-
   }
 }

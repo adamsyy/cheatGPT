@@ -9,6 +9,8 @@ import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Payment from '../Payment/Payment';
 import PremiumBadge from '../Components/BuyPremium/Buypremium'; // Import the PremiumBadge component
+import Proof from '../Proof/proof';
+import Footer from '../Footer/footer';
 
 const Home = () => {
   const [resultData, setResultData] = useState(null);
@@ -41,6 +43,8 @@ const Home = () => {
         </div>
       </div>
       {/* <Payment/> */}
+      <Proof/>
+      <Footer/>
     </div>
   );
 };

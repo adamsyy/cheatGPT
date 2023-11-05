@@ -27,9 +27,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-description {
   font-size: 22px;
-  font-family: "TTInterfaces", Helvetica, sans-serif; 
+  font-family: "San Francisco";
   color: grey;
-  font-weight: 400;
 }
 
 @media (max-width: 768px) {
