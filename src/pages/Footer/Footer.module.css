@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 }
+.additionals_main{
+  display: flex;
+  flex-direction: row;
+}
 .footer {
   margin-top: 200px;
   margin-left: 15%;
@@ -18,6 +22,7 @@
   display: flex;
   flex-direction: column;
   width: 30%;
+  cursor: pointer;
 }
 
 .cheatGpt {
@@ -37,6 +42,7 @@
   list-style: none;
   padding: 0;
   color: gray;
+  
 }
 
 .socials ul li {
@@ -59,4 +65,66 @@
 }
 .additionals{
   padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+margin-left: 0;
+
+    gap: 20px;
+
+  
+  }
+  .cheatGptAndText {
+    width: 100%;
+  }
+  
+ 
+
+  
+  .text {
+    width: 100%; 
+
+  }
+.socials{
+
+}
+  .socials ul {
+    gap: 7px;
+ 
+  }
+  
+
+  .additionalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    font-size: 12px;
+    color: gray;
+    margin-top: 20px;
+    /* padding: 10px 20px; */
+    
+  }
+  /* .additionals{
+    padding: 10px 20px;
+  } */
+  .additionals_main{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+a {
+  text-decoration: none; /* Remove the underline */
+  color: inherit; /* Inherit the parent's color (black) */
+}
+
+a:hover {
+  cursor: grabbing; /* Change the cursor to a pointer on hover */
+  text-decoration: none; /* Remove the underline on hover */
+  color: inherit; /* Inherit the parent's color on hover */
 }

@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
       </div>
 
       <div className={styles.box}>
-        <div className={styles.title}>daniel.crone@gmail.com</div>
+        <div className={styles.title}>daniel crone</div>
         <div className={styles.review}>
           Bought you a coffee. I came expecting failure. CheatGPT did it. A
           fluke! Again I tried. Again it won. I got mad. I told CheatGPT to write
