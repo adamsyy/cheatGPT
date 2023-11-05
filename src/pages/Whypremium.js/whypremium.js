@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet"; // Import Helmet
 import "../../styles/fonts.css";
 import "../../App.css";
 import styles from "./whypremium.module.css";
+import PremiumBadge from "../Components/BuyPremium/Buypremium";
+import PremiumBadgeHome from "../Components/BuyPremiumHomeButton/BuyPremiumHome";
 
 const WhyPremium = () => {
   const [expanded1, setExpanded1] = useState(false);
@@ -35,8 +37,12 @@ const WhyPremium = () => {
           <br />
         </div>
         <div className={styles.proof_subheading}>
-          The premium account comes with its benefits.
+          The premium account comes at just $5. 
+          <div className={styles.buy_button}>
+          <PremiumBadgeHome/>
+          </div>    
         </div>
+
         <div className={styles.customAccordion}>
           <div className={styles.accordionItem} onClick={toggleAccordion1}>
             <h3>No word limit</h3>
@@ -57,6 +63,7 @@ const WhyPremium = () => {
               Experience the freedom of 'Unlimited Prompts' that empower creativity and exploration without restrictions.
             </div>
           )}
+          
         </div>
       </div>
     </div>

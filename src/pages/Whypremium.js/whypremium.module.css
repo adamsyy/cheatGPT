@@ -20,6 +20,8 @@
   .proof_subheading {
     color: gray;
     font-size: 15px;
+    display: flex;
+    flex-direction: row;
   }
   
   .customAccordion {
@@ -84,6 +86,7 @@
   
     .proof_subheading {
       font-size: 12px; /* Decreased font size for smaller screens */
+      flex-direction: column;
     }
     
     .customAccordion {
