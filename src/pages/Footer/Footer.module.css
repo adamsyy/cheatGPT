@@ -1,4 +1,3 @@
-/* Footer.module.css */
 .footer_main{
   display: flex;
   flex-direction: column;
@@ -61,4 +60,3 @@
 .additionals{
   padding: 10px 20px;
 }
-

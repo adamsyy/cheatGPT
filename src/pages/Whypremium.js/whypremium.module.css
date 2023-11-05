@@ -1,0 +1,73 @@
+.proofmain {
+    padding-top:10%;
+    display: flex;
+    flex-direction: column;
+    padding-left:20%;
+  }
+  
+  .proof_heading {
+    font-family: "poppins";
+    font-size: 60px;
+    font-weight: 700;
+    color:pink
+  }
+  
+  .proof_heading > span:first-child {
+    color: black;
+  }
+.proof_subheading{
+    color: gray;
+    font-size: 15px;
+}
+
+/* whypremium.module.css */
+
+/* whypremium.module.css */
+.customAccordion {
+    padding-left: 20px;
+  }
+  
+  .accordionItem {
+    cursor: pointer;
+    display: flex;
+ 
+    align-items: center;
+    font-size: 20px;
+    color: pink;
+    font-family: "poppins";
+    margin-top: 10px;
+    position: relative; /* Add this for positioning */
+  }
+  
+  /* Add a plus icon before the heading */
+  .accordionItem::before {
+    content: "+"; /* Change to your desired plus icon, e.g., "➕" */
+    font-size: 24px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+  }
+  
+  /* Rotate the plus icon when expanded */
+  .accordionItem.expanded::before {
+    transform: rotate(45deg);
+  }
+  
+  .accordionItem span {
+    font-size: 24px;
+  }
+  
+  .iconExpanded {
+    transform: rotate(180deg);
+    transition: transform 0.2s;
+  }
+  
+  .iconCollapsed {
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+  }
+  
+  .accordionDescription {
+    font-size: 15px;
+    margin-top: 10px;
+    color: gray;
+  }

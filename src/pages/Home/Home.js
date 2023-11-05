@@ -11,6 +11,9 @@ import Payment from '../Payment/Payment';
 import PremiumBadge from '../Components/BuyPremium/Buypremium'; // Import the PremiumBadge component
 import Proof from '../Proof/proof';
 import Footer from '../Footer/footer';
+import WhyPremium from '../Whypremium.js/whypremium';
+import Testimonials from '../Testimonials/TestimonialsSection';
+import TestimonialsSection from '../Testimonials/TestimonialsSection';
 
 const Home = () => {
   const [resultData, setResultData] = useState(null);
@@ -43,8 +46,11 @@ const Home = () => {
         </div>
       </div>
       {/* <Payment/> */}
-      <Proof/>
-      <Footer/>
+      {/* <Proof/>
+      <WhyPremium/>
+      // <TestimonialsSection/> */}
+      <TestimonialsSection/>
+      {/* <Footer/> */}
     </div>
   );
 };
