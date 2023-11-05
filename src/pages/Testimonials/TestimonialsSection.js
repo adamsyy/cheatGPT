@@ -1,9 +1,19 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import styles from "./TestimonialsSection.module.css";
 
 const TestimonialsSection = () => {
   return (
     <div className={styles.container}>
+      <Helmet>
+
+      <meta
+        name="keywords"
+        content="CheatGPT testimonials, user reviews, CheatGPT feedback, customer testimonials, AI language model reviews, user experiences, customer feedback, CheatGPT success stories, CheatGPT user opinions, positive reviews, AI language model testimonials, customer satisfaction, CheatGPT user comments, AI content generation feedback, satisfied customers"
+    />
+        {/* Add any other meta tags as needed */}
+      </Helmet>
+
       <div className={styles.box}>
         <div className={styles.title}>kBurgos</div>
         <div className={styles.review}>
