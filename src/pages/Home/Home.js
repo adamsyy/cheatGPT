@@ -49,8 +49,10 @@ const Home = () => {
       {/* <Proof/>
       <WhyPremium/>
       // <TestimonialsSection/> */}
+      <Proof/>
+      <WhyPremium/>
       <TestimonialsSection/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 };

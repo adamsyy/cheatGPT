@@ -16,7 +16,7 @@ const Proof = () => {
           <br />
           <span>yourself.</span>
         </div>
-        <div className={styles.image_container_div}  >
+        <div className={styles.image_container}  >
   <img className={styles.image_container} src={random1} alt="Random 1" />
 </div>
       </div>

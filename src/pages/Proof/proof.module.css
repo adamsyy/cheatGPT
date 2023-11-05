@@ -1,25 +1,74 @@
+/* Default styles for larger screens */
 .proofmain {
     display: flex;
     flex-direction: column;
-    padding-left:20%;
+    padding-left: 20%;
   }
   
   .proof_heading {
     font-family: "poppins";
     font-size: 60px;
     font-weight: 700;
-    color:pink
+    color: pink;
   }
   
   .proof_heading > span:first-child {
     color: black;
   }
-  .image_container_div{
+  
+  .image_container_div {
     padding-left: 30%;
   }
+  
   .image_container {
     width: 900px; /* Adjust the width as needed */
-
     border-radius: 25px; /* Add rounded corners */
-   
   }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .proofmain {
+      padding-left: 10%; /* Adjusted padding for smaller screens */
+      padding-bottom: 100px;
+      padding-right: 8%;
+    }
+  
+    .proof_heading {
+      font-size: 40px; /* Decreased font size for smaller screens */
+    }
+  
+    .image_container_div {
+      padding-top: 30px;
+      padding-left: 0%; /* Adjusted padding for smaller screens */
+
+    }
+  
+    .image_container {
+      width: 100%; /* Make the image container full-width for smaller screens */
+      border-radius: 25px; /* Keep rounded corners for smaller screens */
+    }
+  }
+  
+  /* Media query for tablets with a width of 1024 pixels and above */
+  @media (min-width: 1024px) {
+    .proofmain {
+      padding-left: 20%; /* Reset padding for tablets */
+      padding-bottom: 0;
+    }
+  
+    .proof_heading {
+      font-size: 60px; /* Reset font size for tablets */
+    }
+  
+    .image_container_div {
+      padding-top: 0;
+      padding-left: 30%; /* Reset padding for tablets */
+      padding-right: 0;
+    }
+  
+    .image_container {
+      width: 900px; /* Reset image container width for tablets */
+      border-radius: 25px; /* Reset rounded corners for tablets */
+    }
+  }
+  

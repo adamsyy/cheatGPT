@@ -1,42 +1,40 @@
+/* Default styles for larger screens */
 .proofmain {
-    padding-top:10%;
+    padding-top: 10%;
     display: flex;
     flex-direction: column;
-    padding-left:20%;
+    padding-left: 20%;
   }
   
   .proof_heading {
     font-family: "poppins";
     font-size: 60px;
     font-weight: 700;
-    color:pink
+    color: pink;
   }
   
   .proof_heading > span:first-child {
     color: black;
   }
-.proof_subheading{
+  
+  .proof_subheading {
     color: gray;
     font-size: 15px;
-}
-
-/* whypremium.module.css */
-
-/* whypremium.module.css */
-.customAccordion {
+  }
+  
+  .customAccordion {
     padding-left: 20px;
   }
   
   .accordionItem {
     cursor: pointer;
     display: flex;
- 
     align-items: center;
     font-size: 20px;
     color: pink;
     font-family: "poppins";
     margin-top: 10px;
-    position: relative; /* Add this for positioning */
+    position: relative;
   }
   
   /* Add a plus icon before the heading */
@@ -71,3 +69,37 @@
     margin-top: 10px;
     color: gray;
   }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .proofmain {
+      padding-top: 5%; /* Adjusted padding for smaller screens */
+      padding-left: 7%; /* Adjusted padding for smaller screens */
+      padding-bottom: 15%;
+    }
+  
+    .proof_heading {
+      font-size: 40px; /* Decreased font size for smaller screens */
+    }
+  
+    .proof_subheading {
+      font-size: 12px; /* Decreased font size for smaller screens */
+    }
+    
+    .customAccordion {
+      padding-left: 10px; /* Adjusted padding for smaller screens */
+    }
+  
+    .accordionItem {
+      font-size: 16px; /* Decreased font size for smaller screens */
+    }
+    
+    .accordionItem::before {
+      font-size: 20px; /* Decreased font size for smaller screens */
+    }
+    
+    .accordionDescription {
+      font-size: 12px; /* Decreased font size for smaller screens */
+    }
+  }
+  
