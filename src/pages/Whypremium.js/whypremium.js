@@ -7,6 +7,7 @@ import PremiumBadge from "../Components/BuyPremium/Buypremium";
 import PremiumBadgeHome from "../Components/BuyPremiumHomeButton/BuyPremiumHome";
 
 const WhyPremium = () => {
+  const initialEmail = localStorage.getItem("email");
   const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(false);
 
@@ -39,7 +40,8 @@ const WhyPremium = () => {
         <div className={styles.proof_subheading}>
           The premium account comes at just $5. 
           <div className={styles.buy_button}>
-          <PremiumBadgeHome/>
+            {!initialEmail&&<PremiumBadgeHome/>}
+      
           </div>    
         </div>
 
