@@ -25,9 +25,9 @@ Bypassinng AI filters,Content moderation bypass,Natural language processing,Unre
         />
       </Helmet>
       <Routes>
-        <Route path="/" element={<Navigate to="home" />} />nnnnnnn
+        <Route path="/" element={<Navigate to="home" />} />
         <Route path="stats" element={<Stats />} />
-        <Route path="home" element={<Home />} />nnnnnnnnnnnnnnnnnnnnnn
+        <Route path="home" element={<Home />} />
         <Route path="payment" element={<Payment />} />
         <Route path="givepremium" element={<GivePremium/>} />
       </Routes>
@@ -36,4 +36,3 @@ Bypassinng AI filters,Content moderation bypass,Natural language processing,Unre
 };
 
 export default App;
-nnnnnnnnnnnn
