@@ -53,7 +53,7 @@ handlePremiumClick();
         // Set the "href" attribute with the mailto link
         const recipient = 'adamoommen.mec@gmail.com';
         const subject = 'CheatGPT Premium Application Needed';
-        const body = 'Hi, I wanted a premium account';
+        const body = 'Hi, I wanted a premium account, I am from {country}, i prefer payment via Buymeacoffee/UPI (select one)';
         
         mailtoLink.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
