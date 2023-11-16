@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import '../../styles/fonts.css';
 import '../../App.css';
@@ -14,39 +14,20 @@ import Footer from '../Footer/footer';
 import WhyPremium from '../Whypremium.js/whypremium';
 import Testimonials from '../Testimonials/TestimonialsSection';
 import TestimonialsSection from '../Testimonials/TestimonialsSection';
-import axios from "axios"; 
+
 const Home = () => {
   const [resultData, setResultData] = useState(null);
   const [isBig, setisBig] = useState(false);
   const initialEmail = localStorage.getItem("email");
-  const [isLoading, setIsLoading] = useState(false);
-  const [doneOnce, setDoneOnce] = useState(false);
-
   useEffect(() => {
-    if (initialEmail && !doneOnce) {
+    if (initialEmail) {
       authEmail(initialEmail);
     }
-  }, [initialEmail, doneOnce]);
+  }, [initialEmail]);
 
   const authEmail = async (email) => {
-    setDoneOnce(true);
-    setIsLoading(true);
-    const requestBody = { email: email };
-    try {
-      var response = await axios.post("https://flask-hello-world-theta-green.vercel.app/auth", requestBody);
-      console.log("POST request successful");
-      console.log(response.data.premium);
-      if (response.data.premium === true) {
-        localStorage.setItem('premium', 'true');
-        // Do any additional logic here, no need for window.location.reload()
-      }
-      setIsLoading(false);
-    } catch (error) {
-      console.log("Error occurred while making POST request:", error);
-      setIsLoading(false);
-    }
-  }
-
+    // ... (rest of the code for authEmail function)
+  };
   return (
     <div>
 <Helmet>

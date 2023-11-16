@@ -19,34 +19,34 @@ const Home = () => {
   const [resultData, setResultData] = useState(null);
   const [isBig, setisBig] = useState(false);
   const initialEmail = localStorage.getItem("email");
-  const [isLoading, setIsLoading] = useState(false);
-  const [doneOnce, setDoneOnce] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); 
+  const [doneOnce,setDoneOnce]=useState(false);
 
   useEffect(() => {
-    if (initialEmail && !doneOnce) {
+    if (initialEmail) {
       authEmail(initialEmail);
     }
-  }, [initialEmail, doneOnce]);
+  });
 
   const authEmail = async (email) => {
-    setDoneOnce(true);
-    setIsLoading(true);
+    setIsLoading(true); // Set isLoading to true when submitting
     const requestBody = { email: email };
     try {
-      var response = await axios.post("https://flask-hello-world-theta-green.vercel.app/auth", requestBody);
+      var response=await axios.post("https://flask-hello-world-theta-green.vercel.app/auth", requestBody);
       console.log("POST request successful");
       console.log(response.data.premium);
-      if (response.data.premium === true) {
-        localStorage.setItem('premium', 'true');
-        // Do any additional logic here, no need for window.location.reload()
-      }
-      setIsLoading(false);
+if(response.data.premium==true){
+  localStorage.setItem('premium', 'true');
+  // window.location.reload();
+}
+      setIsLoading(false); // Set isLoading to false after receiving the results
+      // window.location.reload();
     } catch (error) {
       console.log("Error occurred while making POST request:", error);
-      setIsLoading(false);
+      setIsLoading(false); // Set isLoading to false on error
+      window.location.reload();
     }
   }
-
   return (
     <div>
 <Helmet>
