@@ -108,7 +108,6 @@ handlePremiumClick();
       console.log(response.data.premium);
 if(response.data.premium==true){
   localStorage.setItem('premium', 'true');
-  window.location.reload();
 }
       setIsLoading(false); // Set isLoading to false after receiving the results
       // window.location.reload();
