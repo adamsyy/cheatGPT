@@ -1,7 +1,14 @@
 .result-div {
   background-color: rgba(255, 192, 203, 0.5);
   border-radius: 20px;
-  padding: 20px;
+  padding: 2rem; /* Use relative units for padding */
+  font-size: 1.5rem; /*   Use relative units for font size */
+}
 
-  font-size: 20px;
+/* Additional styles for better responsiveness */
+@media screen and (max-width: 600px) {
+  .result-div {
+    padding: 1rem; /* Adjust padding for screens with a width of 600 pixels or less */
+    font-size: 1rem; /* Adjust font size for screens with a width of 600 pixels or less */
+  }
 }
