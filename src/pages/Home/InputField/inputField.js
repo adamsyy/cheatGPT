@@ -69,14 +69,14 @@ function InputField({ setResultData, setisBig }) {
         setSelectedFile(null); // Reset selectedFile state
 
 
-        if (data["result"].length > 1125 &&!premium) {
-          setResultData(
-            "Please consider subscribing to our premium plan, which is priced at just $5, in order to input longer sentences."
-          );
-          setisBig(true);
+        // if (data["result"].length > 1125 &&!premium) {
+        //   setResultData(
+        //     "Please consider subscribing to our premium plan, which is priced at just $5, in order to input longer sentences."
+        //   );
+        //   setisBig(true);
          
-          return; // Do not proceed if input is too short
-        }
+        //   return; // Do not proceed if input is too short
+        // }
         setCount(count + 1);
       })
       .catch(error => {
