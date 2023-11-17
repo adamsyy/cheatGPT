@@ -55,7 +55,7 @@ function InputField({ setResultData, setisBig }) {
     }
     setisBig(false)
     setIsLoading(true);
-    fetch('http://127.0.0.1:5000/read_frompdf', {
+    fetch('https://flask-hello-world-theta-green.vercel.app/read_frompdf', {
       method: 'POST',
       body: formData,
     })
