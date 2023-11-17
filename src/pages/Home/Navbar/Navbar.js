@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import styles from "./Navbar.module.css";
 import logo from "./logo.png";
 import AuthContext from "../../../store/authContext";
+import { useFilePicker } from 'use-file-picker';  
+import { FilePicker } from 'react-file-picker'
 import {
   getAuth,
   signInWithPopup,
@@ -18,10 +20,42 @@ const Navbar = () => {
   const [isLoading, setIsLoading] = useState(false); // Add isLoading state
   const initialEmail = localStorage.getItem("email");
   const premium = localStorage.getItem("premium");
-  
+  const [selectedFile, setSelectedFile] = useState(null);
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   setSelectedFile(file);
+
+  //   // Log the file name to the console
+  //   console.log('Selected file: ', file.name);
+
+  //   // Create FormData object
+  //   const formData = new FormData();
+  //   formData.append('pdfdata', file);
+
+  //   // Make API request
+  //   fetch('http://127.0.0.1:5000/read_frompdf', {
+  //     method: 'POST',
+  //     body: formData,
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       // Handle the API response if needed
+  //       console.log('API Response:', data);
+  //     })
+  //     .catch(error => {
+  //       // Handle errors
+  //       console.error('Error:', error);
+  //     });
+  // };
+
   const handleContributeClick = () => {
     window.open("https://www.buymeacoffee.com/adamsyyy", "_blank");
   };
+  const handlefilepicker = async () => {
+  
+
+  };
+    
   const handleBuyPremiumClick=()=>{
 handlePremiumClick();
   }
@@ -138,6 +172,11 @@ if(response.data.premium==true){
           <div className={styles.navItem} onClick={handleContributeClick}>
             Contribute
           </div>
+          {/* <input
+        type="file"
+        onChange={handleFileChange}
+      /> */}
+    
           <div className={styles.navItem} onClick={handleLogout}>
             Logout
           </div>

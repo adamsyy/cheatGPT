@@ -15,9 +15,11 @@
     "mdb-react-ui-kit": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-file-picker": "^0.0.6",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "use-file-picker": "^2.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

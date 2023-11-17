@@ -78,3 +78,43 @@
   margin-top: 10px;
   padding-left: 1%;
 }
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 10%; /* Adjust the width to fit the entire width of the container */
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem; /* Use relative units for padding */
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: black;
+  font-size: 0.5rem; /* Use relative units for font size */
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Additional styles for better responsiveness */
+@media screen and (max-width: 600px) {
+  /* Adjust styles for screens with a width of 600 pixels or less */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+ 
+}
+
+.container_buttons{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
