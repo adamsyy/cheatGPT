@@ -90,7 +90,7 @@ function InputField({ setResultData, setisBig }) {
     }
     e.preventDefault();
 
-    if (count >= maxTries) {
+    if (count >= maxTries&&!premium) {
       setResultData(
         "You have exceeded the maximum allowed tries. Please consider subscribing to our premium plan which is priced at just $5 for unlimited access."
       );
