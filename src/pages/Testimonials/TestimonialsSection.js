@@ -9,7 +9,7 @@ const TestimonialsSection = () => {
 
       <meta
         name="keywords"
-        content="CheatGPT testimonials, user reviews, CheatGPT feedback, customer testimonials, AI language model reviews, user experiences, customer feedback, CheatGPT success stories, CheatGPT user opinions, positive reviews, AI language model testimonials, customer satisfaction, CheatGPT user comments, AI content generation feedback, satisfied customers"
+        content=" Our tool bypasses AI detection from platforms such as undetectable.ai, turnitin, contentatscale.ai, contentdetector.ai, and copyleaks.com. CheatGPT testimonials, user reviews, CheatGPT feedback, customer testimonials, AI language model reviews, user experiences, customer feedback, CheatGPT success stories, CheatGPT user opinions, positive reviews, AI language model testimonials, customer satisfaction, CheatGPT user comments, AI content generation feedback, satisfied customers"
     />
         {/* Add any other meta tags as needed */}
       </Helmet>
