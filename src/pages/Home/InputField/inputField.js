@@ -165,11 +165,11 @@ function InputField({ setResultData, setisBig }) {
             />
             <div  className={styles.container_buttons} >
                 <div     className={styles.container} >
-      <div   className={styles.button_wrap} >
+      {/* <div   className={styles.button_wrap} >
       <label  className={styles.button}  for="upload">Pdf</label>
             
             <input id="upload" type="file"  onChange={handleFileChange}></input >
-      </div>
+      </div> */}
     </div>
        
 
