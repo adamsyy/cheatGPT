@@ -40,8 +40,7 @@ const TestimonialsSection = () => {
       <div className={styles.box}>
         <div className={styles.title}>Someone</div>
         <div className={styles.review}>
-          Just wanted to make sure if it can bypass
-          Turnitin and if it can look at revision history. Thank you!
+        Thank you so much for your hard work. You make it possible for me to use AI without having to worry anymore.
         </div>
       </div>
 
@@ -49,10 +48,7 @@ const TestimonialsSection = () => {
         <div className={styles.title}>daniel crone</div>
         <div className={styles.review}>
           Bought you a coffee. I came expecting failure. CheatGPT did it. A
-          fluke! Again I tried. Again it won. I got mad. I told CheatGPT to write
-          as a college professor, use formal language, and complex sentence
-          structure. I would break CheatGPT. No, it was not to be. CheatGPT won
-          again. Kudos!
+          fluke! Again I tried. Again it won. I got mad.
         </div>
       </div>
     </div>
