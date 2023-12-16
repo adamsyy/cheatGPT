@@ -45,3 +45,15 @@
     margin: 10px 0; /* Adjusted margin for smaller screens */
   }
 }
+
+@media (min-width: 800px) and (max-width: 1100px){
+  .container {
+    flex-direction: column; /* Change to a column layout on smaller screens */
+    padding: 20px; /* Adjusted padding for smaller screens */
+  }
+
+  .box {
+    width: 90%; /* Expand the box to the full width of the container on smaller screens */
+    margin: 10px 0; /* Adjusted margin for smaller screens */
+  }
+}
