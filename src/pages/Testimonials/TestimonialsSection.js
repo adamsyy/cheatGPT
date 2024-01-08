@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
       </div>
 
       <div className={styles.box}>
-        <div className={styles.title}>Bella Menard</div>
+        <div className={styles.title}>Someone</div>
         <div className={styles.review}>
           Bought you a coffee. Best humanizer by far 💜
         </div>
