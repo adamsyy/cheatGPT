@@ -23,7 +23,9 @@ To get started with CheatGPT, simply sign up for a free account on our platform.
 ## Feedback and Support
 If you have any questions, encounter issues, or would like to provide feedback, please use the feedback form provided in the website.
 
+## Repo Activity
 
+![Alt](https://repobeats.axiom.co/api/embed/26b7312b78b18058defbc3ee2b8ab786ae0137f8.svg "Repobeats analytics image")
 
 Thank you for using CheatGPT!
 
