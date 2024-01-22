@@ -62,7 +62,7 @@ const WhyPremium = () => {
           </div>
           {expanded2 && (
             <div className={styles.accordionDescription}>
-              Experience the freedom of 'Unlimited Prompts' that empower creativity and exploration without restrictions.
+              Experience the freedom of 'Unlimited Prompts' that empower creativity and exploration without restrictions. While we don't offer refunds, our team is here to provide excellent support and address any concerns you may have. Your satisfaction is our priority!
             </div>
           )}
           
