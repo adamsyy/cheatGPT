@@ -62,10 +62,18 @@ const WhyPremium = () => {
           </div>
           {expanded2 && (
             <div className={styles.accordionDescription}>
-              Experience the freedom of 'Unlimited Prompts' that empower creativity and exploration without restrictions. While we don't offer refunds, our team is here to provide excellent support and address any concerns you may have. Your satisfaction is our priority!
+              Experience the freedom of 'Unlimited Prompts' that empower creativity and exploration without restrictions. 
             </div>
           )}
-          
+                   <div className={styles.accordionItem} onClick={toggleAccordion2}>
+            <h3>Terms and Conditions</h3>
+            <span className={expanded2 ? styles.iconExpanded : styles.iconCollapsed}></span>
+          </div>
+          {expanded2 && (
+            <div className={styles.accordionDescription}>
+      While we don't offer refunds, our team is here to provide excellent support and address any concerns you may have. Your satisfaction is our priority!
+            </div>
+          )} 
         </div>
       </div>
     </div>
